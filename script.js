@@ -60,14 +60,16 @@ function loadGame() {
 
     langSwitch = parseInt(localStorage.getItem("clientLang"));
 
-    if (langSwitch === 1) {
-        langNorw.classList.remove("hidden");
-        langEngl.classList.add("hidden");
-        document.getElementById("langSelect").value = 0;
-    } else if (langSwitch === 0) {
+    if (isNaN(langSwitch)) langSwitch = 0;
+
+    if (langSwitch === 0) {
         langEngl.classList.remove("hidden");
         langNorw.classList.add("hidden");
         document.getElementById("langSelect").value = 1;
+    } else {
+        langNorw.classList.remove("hidden");
+        langEngl.classList.add("hidden");
+        document.getElementById("langSelect").value = 0;
     }
 
     updateScore();
@@ -106,17 +108,26 @@ function updateScore() {
     saveGame();
 }
 
-document.getElementById("langSelect").addEventListener("change", () => {
-    if (langSwitch === 0) {
+function passwordProtection() {
+    const inputPassword = document.getElementById("devPanelPasswordField").value;
+    const password = '12345';
+
+    if (inputPassword === password) {
+        document.getElementById("devPanelPasswordProtection").style.display = "block";
+    } else {}
+}
+
+document.getElementById("langSelect").addEventListener("change", (e) => {
+    if (e.target.value === "0") {
         langNorw.classList.remove("hidden");
         langEngl.classList.add("hidden");
         langSwitch = 1;
-    } else if (langSwitch === 1) {
+    } else {
         langEngl.classList.remove("hidden");
         langNorw.classList.add("hidden");
         langSwitch = 0;
     }
-    saveGame()
+    saveGame();
 });
 
 document.getElementById("clickButton").addEventListener("click", () => {
@@ -197,7 +208,25 @@ document.getElementById("togglePanelButton").addEventListener("click", () => {
         devPanel.style.display = "none";
         toggleButton.textContent = "Vis Dev Panel";
     }
+    document.getElementById("devPanelPasswordProtection").style.display = "none";
+    document.getElementById("devPanelPasswordField").value = '';
 });
+
+document.getElementById("hidePanelButton").addEventListener("click", () => {
+    const devPanel = document.getElementById("devPanel");
+    const toggleButton = document.getElementById("togglePanelButton");
+
+    if (devPanel.style.display === "none") {
+        devPanel.style.display = "block";
+        toggleButton.textContent = "Fjern Dev Panel";
+    } else {
+        devPanel.style.display = "none";
+        toggleButton.textContent = "Vis Dev Panel";
+    }
+    document.getElementById("devPanelPasswordProtection").style.display = "none";
+    document.getElementById("devPanelPasswordField").value = '';
+});
+
 
 document.getElementById("applySettings").addEventListener("click", () => {
     score = parseInt(document.getElementById("setScore").value);
