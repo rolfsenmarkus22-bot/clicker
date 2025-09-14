@@ -101,10 +101,8 @@ function updateScore() {
     document.getElementById("upgrade2Cost").textContent = upgrade2Cost;
     document.getElementById("upgrade3Cost").textContent = upgrade3Cost;
     document.getElementById("autoClickerCost").textContent = autoClickerCost;
-    document.getElementById("multiplierUpgradeCost").textContent =
-        multiplierUpgradeCost;
-    document.getElementById("clickMultiplierCost").textContent =
-        clickMultiplierCost;
+    document.getElementById("multiplierUpgradeCost").textContent = multiplierUpgradeCost;
+    document.getElementById("clickMultiplierCost").textContent = clickMultiplierCost;
     saveGame();
 }
 
@@ -122,12 +120,13 @@ document.getElementById("langSelect").addEventListener("change", (e) => {
         langNorw.classList.remove("hidden");
         langEngl.classList.add("hidden");
         langSwitch = 1;
+        updateScore()
     } else {
         langEngl.classList.remove("hidden");
         langNorw.classList.add("hidden");
         langSwitch = 0;
+        updateScore()
     }
-    saveGame();
 });
 
 document.getElementById("clickButton").addEventListener("click", () => {
