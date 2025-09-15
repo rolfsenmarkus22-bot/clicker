@@ -14,9 +14,6 @@ let clickMultiplierCost = 1000000;
 
 var langSwitch = 1;
 
-const langEngl = document.getElementById("langEnglish");
-const langNorw = document.getElementById("langNorwegian");
-
 function saveGame() {
     localStorage.setItem("score", score);
     localStorage.setItem("multiplier", multiplier);
@@ -63,12 +60,10 @@ function loadGame() {
     if (isNaN(langSwitch)) langSwitch = 0;
 
     if (langSwitch === 0) {
-        langEngl.classList.remove("hidden");
-        langNorw.classList.add("hidden");
+        //fill out logic
         document.getElementById("langSelect").value = 1;
     } else {
-        langNorw.classList.remove("hidden");
-        langEngl.classList.add("hidden");
+        //fill out logic
         document.getElementById("langSelect").value = 0;
     }
 
@@ -117,15 +112,11 @@ function passwordProtection() {
 
 document.getElementById("langSelect").addEventListener("change", (e) => {
     if (e.target.value === "0") {
-        langNorw.classList.remove("hidden");
-        langEngl.classList.add("hidden");
+        //fill out logic
         langSwitch = 1;
-        updateScore()
     } else {
-        langEngl.classList.remove("hidden");
-        langNorw.classList.add("hidden");
+        //fill out logic
         langSwitch = 0;
-        updateScore()
     }
 });
 

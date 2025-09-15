@@ -19,8 +19,8 @@
     <div id="langNorwegian" class="shown">
         <div id="game">
             <h1>Aura Clicker</h1>
-            <p>Poengsum: <span id="score">0</span></p>
-            <p>Klikk-multiplikator: <span id="multiplier">1</span></p>
+            <p id="scoreP">Poengsum: <span id="score">0</span></p>
+            <p id="clickMultP">Klikk-multiplikator: <span id="multiplier">1</span></p>
             <button id="clickButton">Klikk meg!</button>
 
             <!-- Oppgraderingsknapper -->
@@ -51,46 +51,43 @@
         </div>
         <div id="devPanel">
             <input id="devPanelPasswordField" type="password">
-            <button if="passwordProtection" onclick="passwordProtection()">confirm password</button>
+            <button id="passwordProtection" onclick="passwordProtection()">confirm password</button>
             <div id="devPanelPasswordProtection" class="hidden">
                 <h2 id="devPanelTitle">Mr.dogo's admin Panel</h2>
                 <div class="devPanelField">
-                    <label for="setScore">Sett poengsum:</label>
+                    <label id="setScoreLabel" for="setScore">Sett poengsum:</label>
                     <input type="number" id="setScore" value="0" />
                 </div>
                 <div class="devPanelField">
-                    <label for="setMultiplier">Sett klikk-multiplikator:</label>
+                    <label id='setMultButtonLabel' for="setMultiplier">Sett klikk-multiplikator:</label>
                     <input type="number" id="setMultiplier" value="1" />
                 </div>
                 <div class="devPanelField">
-                    <label for="setPanelName">Endre panelnavn:</label>
+                    <label id="setPanelNameLabel" for="setPanelName">Endre panelnavn:</label>
                     <input type="text" id="setPanelName" value="Olebolle's Panel" />
                 </div>
                 <div class="devPanelField">
-                    <label for="setUpgrade1Cost">Sett kostnad for Oppgradering 1:</label>
+                    <label id="setUpgrade1CostLabel" for="setUpgrade1Cost">Sett kostnad for Oppgradering 1:</label>
                     <input type="number" id="setUpgrade1Cost" value="10" />
                 </div>
                 <div class="devPanelField">
-                    <label for="setUpgrade2Cost">Sett kostnad for Oppgradering 2:</label>
+                    <label id="setUpgrade2CostLabel" for="setUpgrade2Cost">Sett kostnad for Oppgradering 2:</label>
                     <input type="number" id="setUpgrade2Cost" value="100" />
                 </div>
                 <div class="devPanelField">
-                    <label for="setUpgrade3Cost">Sett kostnad for Oppgradering 3:</label>
+                    <label id="setUpgrade3CostLabel" for="setUpgrade3Cost">Sett kostnad for Oppgradering 3:</label>
                     <input type="number" id="setUpgrade3Cost" value="1000" />
                 </div>
                 <div class="devPanelField">
-                    <label for="setAutoClickerCost">Sett kostnad for Auto Clicker:</label>
+                    <label id="setAutoClickLabel" for="setAutoClickerCost">Sett kostnad for Auto Clicker:</label>
                     <input type="number" id="setAutoClickerCost" value="5000" />
                 </div>
                 <div class="devPanelField">
-                    <label for="setMultiplierUpgradeCost">Sett kostnad for Multiplier Oppgradering:</label
-          >
+                    <label id="setMultUpgradeCostLabel" for="setMultiplierUpgradeCost">Sett kostnad for Multiplier Oppgradering:</label>
           <input type="number" id="setMultiplierUpgradeCost" value="100000" />
         </div>
         <div class="devPanelField">
-          <label for="setClickMultiplierCost"
-            >Sett kostnad for Click Multiplier Oppgradering:</label
-          >
+          <label id="setClickMultCostLabel" for="setClickMultiplierCost">Sett kostnad for Click Multiplier Oppgradering:</label>
           <input type="number" id="setClickMultiplierCost" value="1000000" />
         </div>
         <button id="applySettings">Apply Settings</button>
@@ -98,36 +95,6 @@
         </div>
       </div>
     </div>
-    <div id="langEnglish" class="hidden">
-      <div id="game">
-        <h1>Aura Clicker</h1>
-        <p>score: <span id="score">0</span></p>
-        <p>click-mulitplier: <span id="multiplier">1</span></p>
-        <button id="clickButton">Click Me!</button>
-
-        <!-- Oppgraderingsknapper -->
-        <button class="upgradeButton" id="upgrade1Button">
-          upgrade 1 (costs <span id="upgrade1Cost">10</span> points)
-        </button>
-        <button class="upgradeButton" id="upgrade2Button">
-          upgrade 2 (costs <span id="upgrade2Cost">100</span> points)
-        </button>
-        <button class="upgradeButton" id="upgrade3Button">
-          upgrade 3 (costs <span id="upgrade3Cost">1000</span> points)
-        </button>
-        <button class="upgradeButton" id="autoClickerButton">
-          Auto Clicker (costs <span id="autoClickerCost">5000</span> points)
-        </button>
-        <button class="upgradeButton" id="multiplierUpgradeButton">
-          Multiplier upgrade (costs
-          <span id="multiplierUpgradeCost">100000</span> points)
-        </button>
-        <button class="upgradeButton" id="clickMultiplierButton">
-          Click Multiplier upgrade (costs
-          <span id="clickMultiplierCost">1000000</span> points)
-        </button>
-        <button id="resetButton">Reset</button>
-      </div>
     </div>
   </body>
 </html>
