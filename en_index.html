@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura Clicker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <button id="resetButton">Reset</button>
+    <button id="redirectToLanding" onclick="redirectToLanding()">Change Language</button>
+    <br><br><br><br>
+    <div class="body">
+      <div id="game">
+        <h1>Aura Clicker</h1>
+        <p>score: <span id="score">0</span></p>
+        <p>click-mulitplier: <span id="multiplier">1</span></p>
+        <button id="clickButton">Click Me!</button>
+        <!-- Upgrade buttons -->
+        <button class="upgradeButton" id="upgrade1Button">
+            upgrade 1 (costs <span id="upgrade1Cost">10</span> points)
+        </button>
+        <button class="upgradeButton" id="upgrade2Button">
+            upgrade 2 (costs <span id="upgrade2Cost">100</span> points)
+        </button>
+        <button class="upgradeButton" id="upgrade3Button">
+            upgrade 3 (costs <span id="upgrade3Cost">1000</span> points)
+        </button>
+        <button class="upgradeButton" id="autoClickerButton">
+            Auto Clicker (costs <span id="autoClickerCost">5000</span> points)
+        </button>
+        <button class="upgradeButton" id="multiplierUpgradeButton">
+            Multiplier upgrade (costs
+            <span id="multiplierUpgradeCost">100000</span> points)
+        </button>
+        <button class="upgradeButton" id="clickMultiplierButton">
+            Click Multiplier upgrade (costs
+            <span id="clickMultiplierCost">1000000</span> points)
+        </button>
+    </div>
+    </div>
+</body>
+</html>
