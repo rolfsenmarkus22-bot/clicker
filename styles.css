@@ -1,93 +1,190 @@
+/* General body and container styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(67, 69, 165);
-    color: aliceblue;
+    background-color: #2c3e50; /* Dark blue background */
+    color: #ecf0f1; /* Light gray text */
 }
 
-.hidden {
-    display: none;
+.body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2c3e50; /* Dark blue background */
+    color: #ecf0f1; /* Light gray text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
 }
 
-.shown {
-    font-family: Arial, sans-serif;
-}
-
+/* Centralized game/content area */
 #game {
     text-align: center;
-    margin-top: 50px;
+    padding: 30px;
+    background-color: #34495e; /* Slightly lighter container color */
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 500px;
+    box-sizing: border-box;
 }
 
+/* Headings and text elements */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #ecf0f1;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* Common button styles */
+button {
+    padding: 12px 24px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #636363;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Specific button styles */
+#clickButton {
+    background-color: #3498db; /* Blue */
+    font-size: 1.5em;
+    padding: 20px 40px;
+}
+
+.upgradeButton {
+    background-color: #2980b9; /* Darker blue */
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+}
+
+#togglePanelButton {
+    background-color: #e74c3c; /* Red */
+    margin-top: 20px;
+}
+
+#alexButton {
+    background-color: #40e0d0; /* Turquoise */
+}
+
+/* Dev Panel styles */
 #devPanel {
-    display: none;
-    border: 1px solid #ccc;
+    background-color: #34495e;
+    border: 1px solid #7f8c8d;
     padding: 20px;
-    width: 300px;
-    margin: 0 auto;
     margin-top: 30px;
-    background-color: #f9f9f9;
+    border-radius: 10px;
+    color: #ecf0f1;
 }
 
 .devPanelField {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 input[type="number"],
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     width: 100%;
-    padding: 5px;
+    padding: 8px;
     box-sizing: border-box;
+    background-color: #4e6277;
+    border: 1px solid #7f8c8d;
+    color: #ecf0f1;
+    border-radius: 4px;
 }
 
-button {
+/* Language selector styles */
+.langSelectClass {
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto;
+    background-color: #4e6277;
+    color: #ecf0f1;
+    border: 1px solid #7f8c8d;
+}
+
+.langSelectLabelClass {
+    font-size: 1em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    #game {
+        width: 95%;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    button {
+        font-size: 0.9em;
+    }
+    #clickButton {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+}
+
+#resetButton{
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#redirectToLanding{
     padding: 10px 20px;
     background-color: #28a745;
     color: white;
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    margin-left: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.upgradeButton {
-    margin-top: 20px;
-    background-color: #007bff;
-    display: block;
-    width: 200px;
-    margin: 10px auto;
+#landingButton {
+  background-color: #28a745;
+  color: white;
 }
 
-#togglePanelButton {
-    margin-top: 20px;
-    background-color: #dc3545;
-}
-
-#alexButton {
-    margin-top: 20px;
-    background-color: #40e0d0;
-}
-
-#resetButton {
-    margin-top: 10px;
-    background-color: #ff0000;
-    color: white;
-    font-size: 10px;
-    padding: 3px 6px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.langSelectClass {
-    font-size: 12px;
-    border-radius: 5px;
-    margin: auto;
-    padding: 5px;
-}
-
-.langSelectLabelClass {
-    font-size: 12px;
-}
