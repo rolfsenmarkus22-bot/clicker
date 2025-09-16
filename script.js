@@ -101,7 +101,7 @@ function updateUI() {
 // Dev Panel functionality (only exists on no_index.html)
 function passwordProtection() {
   const inputPassword = document.getElementById("devPanelPasswordField")?.value;
-  const password = "12345";
+  const password = "5656";
   const devPanelProtection = document.getElementById("devPanelPasswordProtection");
   if (inputPassword === password && devPanelProtection) {
     devPanelProtection.classList.remove("hidden");
@@ -245,3 +245,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("applySettings")?.addEventListener("click", applySettings);
   }
 });
+
